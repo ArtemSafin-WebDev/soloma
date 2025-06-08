@@ -1,0 +1,20 @@
+@use "media";
+
+:root {
+  --primary-color: #de5737;
+  --text-color: #ffffff;
+  --bg-color: #0c0c0c;
+  --inter: "Inter", sans-serif;
+  --literature: "Literature Decor", serif;
+  --aorom: "Aorom", sans-serif;
+  --content-padding: 6rem;
+  --container-width: 180rem;
+
+  @include media.breakpoint(small-tablet) {
+    --content-padding: 3rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    --content-padding: 1.8rem;
+  }
+}
