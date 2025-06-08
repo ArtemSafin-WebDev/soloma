@@ -5,6 +5,7 @@
   @include utils.blockWrapper;
   margin-top: 22rem;
   margin-bottom: 17rem;
+  position: relative;
 
   @include media.breakpoint(tablet) {
     margin-top: 10.8rem;
@@ -14,6 +15,33 @@
   @include media.breakpoint(mobile) {
     margin-top: 6.4rem;
     margin-bottom: 11rem;
+  }
+}
+
+.intro__decor-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  pointer-events: none;
+
+  @include media.breakpoint(mobile) {
+    position: absolute;
+    left: auto;
+    top: auto;
+    width: 90%;
+    height: auto;
+    transform: none;
+    grid-row: 5 / 6;
+    grid-column: 1 / -1;
+    align-self: center;
+    justify-self: center;
+
+    z-index: -1;
+    margin-top: 2.3rem;
   }
 }
 
@@ -176,7 +204,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.1);
     border-radius: 50%;
     background: #de5737;
     width: 30rem;
@@ -212,6 +240,7 @@
     width: 100%;
     max-width: 24rem;
     margin-top: 2rem;
+    z-index: 4;
   }
 }
 
@@ -219,9 +248,11 @@
   justify-self: flex-end;
   width: 100%;
   max-width: 51rem;
+  position: relative;
 
   @include media.breakpoint(tablet) {
     display: contents;
+    position: static;
   }
 }
 
@@ -260,6 +291,7 @@
     margin: 0;
     margin-bottom: 1rem;
     margin-left: 2rem;
+    z-index: 10;
   }
 
   @media (hover: hover) and (pointer: fine) {
