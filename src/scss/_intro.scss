@@ -72,7 +72,7 @@
   padding-left: 3rem;
   z-index: 5;
   margin-top: 14rem;
-
+  pointer-events: none;
   @include media.breakpoint(tablet) {
     display: contents;
   }
@@ -88,7 +88,7 @@
   text-transform: lowercase;
   margin-bottom: 1.3rem;
   color: var(--primary-color);
-
+  pointer-events: none;
   @include media.breakpoint(tablet) {
     font-size: 4rem;
     font-style: italic;
@@ -123,6 +123,7 @@
   text-transform: uppercase;
 
   margin-bottom: 2.4rem;
+  pointer-events: none;
 
   @include media.breakpoint(tablet) {
     margin: 0;
@@ -157,7 +158,7 @@
   text-transform: uppercase;
   font-family: var(--literature);
   padding-left: 10.5rem;
-
+  pointer-events: none;
   @include media.breakpoint(tablet) {
     padding-left: 11.3rem;
     font-size: 7.2418rem;
@@ -246,13 +247,27 @@
 
 .intro__image-wrapper {
   justify-self: flex-end;
-  width: 100%;
-  max-width: 51rem;
+  max-width: 100%;
+  width: 45rem;
   position: relative;
 
   @include media.breakpoint(tablet) {
     display: contents;
     position: static;
+    width: auto;
+  }
+}
+
+.intro__cards-slider {
+  @include media.breakpoint(tablet) {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    width: 100%;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-top: 0rem;
   }
 }
 
@@ -267,7 +282,7 @@
   display: grid;
   place-items: center;
   margin-bottom: -4rem;
-  margin-left: -2rem;
+  margin-left: -10rem;
 
   @include media.breakpoint(tablet) {
     grid-column: 5 / -1;
@@ -299,6 +314,11 @@
       .intro__play-btn {
         transform: scale(1.1);
       }
+
+      .intro__play-bg {
+        filter: drop-shadow(0rem 0rem 0.1rem rgba(222, 87, 55, 0.1))
+          drop-shadow(0rem 0rem 5.39rem rgba(222, 87, 55, 0.31));
+      }
     }
   }
 }
@@ -312,6 +332,7 @@
   object-fit: contain;
   filter: drop-shadow(0rem 0rem 0.1rem rgba(0, 0, 0, 0.1))
     drop-shadow(0rem 0rem 5.39rem rgba(15, 15, 15, 0.31));
+  transition: filter 0.2s;
 }
 
 .intro__play-btn {
@@ -417,6 +438,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 4rem;
+    position: relative;
+    z-index: 30;
   }
 
   @include media.breakpoint(mobile) {
@@ -557,5 +580,36 @@
     padding: 0.9rem 2.4rem;
     margin: 0;
     align-self: stretch;
+  }
+}
+
+.intro__cards-slider {
+  width: 100%;
+}
+
+.intro__cards-slider-card {
+  border-radius: 2rem 0rem;
+  background-color: #0b0907;
+  box-shadow: 0rem 0rem 2.0744rem 0rem rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  aspect-ratio: 388 / 554;
+  display: grid;
+  width: 100%;
+  position: relative;
+
+  @include media.breakpoint(tablet) {
+    border-radius: 1.7657rem 0rem;
+
+    box-shadow: 0rem 0rem 1.8314rem 0rem rgba(0, 0, 0, 0.75);
+  }
+
+  video,
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

@@ -5,6 +5,7 @@ import art from "./art";
 import team from "./team";
 import reviews from "./reviews";
 import events from "./events";
+import intro from "./intro";
 
 document.addEventListener("DOMContentLoaded", () => {
   faq();
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   team();
   reviews();
   events();
+  intro();
 });
 
 window.addEventListener("load", () => {
