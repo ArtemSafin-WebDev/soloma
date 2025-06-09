@@ -1,0 +1,257 @@
+@use "utils";
+@use "media";
+
+.watch {
+  @include utils.blockWrapper;
+  aspect-ratio: 1920 / 1080;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  @include media.breakpoint(tablet) {
+    aspect-ratio: 768 / 988;
+  }
+
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 320 / 543;
+  }
+}
+
+.watch__content {
+  @include utils.blockContent;
+  padding: 11rem 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 2rem;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-areas: "top" "center" "bottom";
+
+  @include media.breakpoint(tablet) {
+    padding: 10.1rem 0;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+.watch__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.watch__bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.watch__text {
+  max-width: 40rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.048rem;
+  grid-area: top;
+  align-self: flex-end;
+  justify-self: flex-start;
+  margin-bottom: -8rem;
+
+  @include media.breakpoint(tablet) {
+    align-self: flex-start;
+    margin: 0;
+    max-width: 25rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.048rem;
+    margin-top: 3rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 17rem;
+    margin: 0;
+  }
+}
+
+.watch__heading {
+  grid-area: bottom;
+  display: flex;
+  align-items: center;
+  gap: 3.72rem;
+  text-align: center;
+  justify-content: center;
+  font-size: 8.5372rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.2561rem;
+  font-family: var(--literature);
+  align-self: flex-end;
+  justify-self: center;
+
+  br {
+    display: none;
+  }
+
+  @include media.breakpoint(tablet) {
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.15rem;
+    br {
+      display: block;
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.072rem;
+    gap: 2.5rem;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 2.9489rem;
+    height: 8.5516rem;
+    background-image: url("../images/watch/dots.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include media.breakpoint(tablet) {
+      width: 2.0976rem;
+      height: 6.2927rem;
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 1rem;
+      height: 3rem;
+    }
+  }
+}
+
+.watch__middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rem;
+  grid-area: center;
+  align-self: center;
+  justify-self: center;
+
+  @include media.breakpoint(tablet) {
+    gap: 5rem;
+    justify-self: stretch;
+    justify-content: space-between;
+  }
+  @include media.breakpoint(mobile) {
+    gap: 2rem;
+  }
+}
+
+.watch__decor {
+  height: 3.2rem;
+  width: auto;
+  flex-shrink: 0;
+  @include media.breakpoint(tablet) {
+    height: 2.2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    height: 1rem;
+  }
+}
+
+.watch__link {
+  width: 42rem;
+  height: 42rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+
+  @include media.breakpoint(tablet) {
+    width: 35rem;
+    height: 35rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .watch__link-bg {
+        filter: drop-shadow(0rem 0rem 0.1rem rgba(222, 87, 55, 0.1))
+          drop-shadow(0rem 0rem 5.39rem rgba(222, 87, 55, 0.31));
+      }
+    }
+  }
+}
+
+.watch__link-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  object-fit: contain;
+  filter: drop-shadow(0rem 0rem 0.1rem rgba(0, 0, 0, 0.1))
+    drop-shadow(0rem 0rem 5.39rem rgba(15, 15, 15, 0.31));
+  transition: filter 0.4s ease;
+}
+
+.watch__link-btn {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  width: 18rem;
+  height: 18rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  @include media.breakpoint(tablet) {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 6.4959rem;
+    height: 6.4971rem;
+  }
+
+  svg {
+    fill: white;
+    width: 6rem;
+    height: 6rem;
+    @include media.breakpoint(tablet) {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+    @include media.breakpoint(mobile) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
