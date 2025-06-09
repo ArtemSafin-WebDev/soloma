@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { EffectCards } from "swiper/modules";
+import { Autoplay, EffectCards } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -34,7 +34,11 @@ export default function intro() {
       grabCursor: true,
       speed: 600,
       longSwipesRatio: 0.2,
-      modules: [EffectCards],
+      modules: [EffectCards, Autoplay],
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: true,
+      },
       init: false,
       cardsEffect: {
         slideShadows: true,
