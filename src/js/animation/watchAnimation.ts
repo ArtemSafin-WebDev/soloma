@@ -23,4 +23,5 @@ export default function initWatchAnimation() {
       { x: 0, opacity: 0 },
       { x: 20, opacity: 1, duration: 0.7 }, '<'
   );
+
 }

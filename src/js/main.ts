@@ -12,6 +12,7 @@ import initIntroAnimation from "./animation/introAnimation";
 import initEstheticsAnimation from "./animation/estheticsAnimation";
 import initWatchAnimation from "./animation/watchAnimation";
 import initArtAnimation from "./animation/artAnimation";
+import initVariantsAnimation from "./animation/variantsAnimation";
 
 document.addEventListener("DOMContentLoaded", () => {
   faq();
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initEstheticsAnimation();
   initWatchAnimation();
   initArtAnimation();
+  initVariantsAnimation();
 });
 
 window.addEventListener("load", () => {
