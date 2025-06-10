@@ -11,13 +11,10 @@ import fancybox from "./fancybox";
 import initIntroAnimation from "./animation/introAnimation";
 import initEstheticsAnimation from "./animation/estheticsAnimation";
 import initWatchAnimation from "./animation/watchAnimation";
-<<<<<<< HEAD
 import smoothScrolling from "./smoothScrolling";
 import choose from "./choose";
-=======
 import initArtAnimation from "./animation/artAnimation";
 import initVariantsAnimation from "./animation/variantsAnimation";
->>>>>>> af519d20b959d2d098df3c490370f4ef1b625e98
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
