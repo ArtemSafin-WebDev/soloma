@@ -1,5 +1,8 @@
+import Swiper from "swiper";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import "swiper/css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,8 +64,29 @@ export default function choose() {
             titles[index].classList.add("active");
           }, slidePosition * 0.2);
         });
+
+        return () => {
+          slides.forEach((slide) => {
+            const card = slide.querySelector(".choose__slider-card");
+            card?.classList.remove("active");
+          });
+          titles.forEach((title) => title.classList.remove("active"));
+          titles[0].classList.add("active");
+        };
       },
       element
     );
+
+    mm.add("(max-width: 768px)", () => {
+      const container = element.querySelector<HTMLElement>(".swiper");
+      if (!container) return;
+      const instance = new Swiper(container, {
+        slidesPerView: "auto",
+        speed: 600,
+        watchSlidesProgress: true,
+      });
+
+      return () => instance.destroy();
+    });
   });
 }
