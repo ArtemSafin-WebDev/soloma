@@ -49,6 +49,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
 }
 
 .watch__text {
@@ -179,6 +180,9 @@
   height: 3.2rem;
   width: auto;
   flex-shrink: 0;
+
+  opacity: 0;
+
   @include media.breakpoint(tablet) {
     height: 2.2rem;
   }
@@ -186,6 +190,14 @@
   @include media.breakpoint(mobile) {
     height: 1rem;
   }
+}
+
+.watch__decor--left {
+  transform: translateX(-2rem);
+}
+
+.watch__decor--right {
+  transform: translateX(2rem);
 }
 
 .watch__link {
@@ -196,6 +208,9 @@
   z-index: 1;
   display: grid;
   place-items: center;
+
+  opacity: 0;
+  transform: scale(0.8);
 
   @include media.breakpoint(tablet) {
     width: 35rem;
