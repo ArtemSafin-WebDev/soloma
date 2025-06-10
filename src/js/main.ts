@@ -7,6 +7,9 @@ import reviews from "./reviews";
 import events from "./events";
 import intro from "./intro";
 import fancybox from "./fancybox";
+
+import initIntroAnimation from "./animation/introAnimation";
+import initEstheticsAnimation from "./animation/estheticsAnimation";
 import initWatchAnimation from "./animation/watchAnimation";
 import smoothScrolling from "./smoothScrolling";
 import choose from "./choose";
@@ -21,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
   intro();
   fancybox();
   choose();
+  initIntroAnimation();
+  initEstheticsAnimation();
   initWatchAnimation();
 });
 
