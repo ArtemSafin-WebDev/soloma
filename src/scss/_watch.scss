@@ -63,10 +63,6 @@
   justify-self: flex-start;
   margin-bottom: -8rem;
 
-  opacity: 0;
-  transform: translateY(20px); /* Начальное смещение для анимации */
-  will-change: opacity, transform; /* Оптимизация анимации */
-
   @include media.breakpoint(tablet) {
     align-self: flex-start;
     margin: 0;
@@ -104,11 +100,6 @@
   font-family: var(--literature);
   align-self: flex-end;
   justify-self: center;
-
-  opacity: 0;
-  will-change: opacity, transform;
-  transform: translateY(-20px);
-
   br {
     display: none;
   }
