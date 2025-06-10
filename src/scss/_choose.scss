@@ -21,14 +21,26 @@
   letter-spacing: -0.075rem;
   color: #999;
   max-width: 36rem;
-  margin-bottom: 20rem;
+  margin-bottom: 2rem;
 }
 
 .choose__row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 7.4rem;
   align-items: flex-end;
+}
+
+.choose__pin-height {
+  height: 100vh;
+}
+
+.choose__pin-inner {
+  position: sticky;
+  padding-bottom: 4rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .choose__titles {
@@ -36,6 +48,9 @@
   grid-row: 1 / 2;
   align-self: flex-end;
   justify-self: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
 }
 
 .choose__title {
@@ -47,6 +62,17 @@
   text-transform: uppercase;
   color: #161616;
   font-family: var(--aorom);
+  grid-area: stack;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 500ms, visibility 0s linear 500ms;
+
+  &.active {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 500ms, visibility 500ms;
+  }
 }
 
 .choose__slider {
@@ -67,6 +93,13 @@
     box-sizing: border-box;
     width: calc(50% - 7.4rem / 2);
     margin-right: 7.4rem;
+
+    &::before {
+      content: "";
+      aspect-ratio: 550 / 400;
+      display: block;
+      width: 100%;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -76,19 +109,28 @@
 .choose__slider-card {
   display: flex;
   flex-direction: column;
-  opacity: 0.4;
+
   flex-grow: 1;
   position: relative;
 
   &.active {
-    opacity: 1;
     .choose__slider-card-dropdown {
       grid-template-rows: 1fr;
     }
 
+    .choose__slider-card-triangles {
+      opacity: 0;
+    }
+
     .choose__slider-card-image-container {
-      border-radius: 3rem;
       bottom: 100%;
+    }
+    .choose__slider-card-image-container-inner {
+      border-radius: 3rem;
+
+      &::after {
+        opacity: 0;
+      }
     }
 
     .choose__slider-card-content {
@@ -104,15 +146,45 @@
   grid-row: 1 / 2;
   position: relative;
   aspect-ratio: 550 / 400;
-  overflow: hidden;
-  border-radius: 0;
+
   margin-top: auto;
-  transition: border-radius 500ms, bottom 500ms;
+  transition: bottom 500ms;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: auto;
+  z-index: 50;
+}
+
+.choose__slider-card-image-container-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: border-radius 500ms;
+  overflow: hidden;
+  border-radius: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--bg-color);
+    opacity: 0.6;
+    transition: opacity 500ms;
+  }
+}
+
+.choose__slider-card-triangles {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 500ms;
 }
 
 .choose__slider-card-image {
