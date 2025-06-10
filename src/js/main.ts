@@ -11,6 +11,7 @@ import fancybox from "./fancybox";
 import initIntroAnimation from "./animation/introAnimation";
 import initEstheticsAnimation from "./animation/estheticsAnimation";
 import initWatchAnimation from "./animation/watchAnimation";
+import initArtAnimation from "./animation/artAnimation";
 
 document.addEventListener("DOMContentLoaded", () => {
   faq();
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initIntroAnimation();
   initEstheticsAnimation();
   initWatchAnimation();
+  initArtAnimation();
 });
 
 window.addEventListener("load", () => {
