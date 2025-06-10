@@ -13,8 +13,9 @@ export default function initWatchAnimation() {
   });
   tl.to('.watch__bg-image', { opacity: 1, duration: 1.2 });
   tl.to('.watch__text', { opacity: 1, y: 0, duration: 0.5 }, '-=0.3');
-  tl.to('.watch__link', { opacity: 1, y: 0, duration: 0.5}, '+=0.2');
+  tl.to('.watch__heading', { opacity: 1, y: 0, duration: 0.8 }, '-=0.5');
 
+  tl.to('.watch__link', { opacity: 1, y: 0, duration: 0.5}, '+=0.2');
   tl.fromTo('.watch__decor--left',
       { x: 0, opacity: 0 },
       { x: -20, opacity: 1, duration: 0.7 }, '<'
@@ -22,6 +23,4 @@ export default function initWatchAnimation() {
       { x: 0, opacity: 0 },
       { x: 20, opacity: 1, duration: 0.7 }, '<'
   );
-
-  tl.to('.watch__heading', { opacity: 1, y: 0, duration: 0.8 }, '-=0.5');
 }

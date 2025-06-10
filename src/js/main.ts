@@ -9,6 +9,7 @@ import intro from "./intro";
 import fancybox from "./fancybox";
 
 import initIntroAnimation from "./animation/introAnimation";
+import initEstheticsAnimation from "./animation/estheticsAnimation";
 import initWatchAnimation from "./animation/watchAnimation";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fancybox();
 
   initIntroAnimation();
+  initEstheticsAnimation();
   initWatchAnimation();
 });
 
