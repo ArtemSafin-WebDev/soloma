@@ -16,7 +16,6 @@ import choose from "./choose";
 import initArtAnimation from "./animation/artAnimation";
 import initVariantsAnimation from "./animation/variantsAnimation";
 
-
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   faq();
