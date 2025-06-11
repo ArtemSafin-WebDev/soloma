@@ -24,6 +24,36 @@ export default function events() {
           ".events__slider-arrow--prev"
         ),
       },
+      /*on: {
+        init: function() {
+          updateActiveSlideWidth(this);
+        },
+        slideChange: function() {
+          updateActiveSlideWidth(this);
+        },
+        resize: function() {
+          updateActiveSlideWidth(this);
+        },
+      }*/
     });
+
+    /*function updateActiveSlideWidth(swiper) {
+      const slides = swiper.slides;
+      const activeIndex = swiper.activeIndex; // текущий активный слайд
+
+      // Сбрасываем ширину всех слайдов
+      slides.forEach(slide => {
+        slide.style.width = '';
+      });
+
+      // Устанавливаем увеличенную ширину для первого активного слайда
+      if (slides[activeIndex]) {
+        slides[activeIndex].style.width = 'calc(50% - 2rem)';
+      }
+
+      // Обновляем Swiper, чтобы применить изменения
+      swiper.update();
+    }*/
+
   });
 }
