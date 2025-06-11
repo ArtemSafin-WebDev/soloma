@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function initEventsAnimation() {
   const trigger = document.querySelector(".events")
-  const items = document.querySelectorAll(".reviews__heading, .events__slider")
+  const items = document.querySelectorAll(".events__heading, .events__slider")
 
   gsap.set(items, { y: 40, opacity: 0 })
 
