@@ -7,14 +7,17 @@ import reviews from "./reviews";
 import events from "./events";
 import intro from "./intro";
 import fancybox from "./fancybox";
+import smoothScrolling from "./smoothScrolling";
+import choose from "./choose";
 
 import initIntroAnimation from "./animation/introAnimation";
 import initEstheticsAnimation from "./animation/estheticsAnimation";
 import initWatchAnimation from "./animation/watchAnimation";
-import smoothScrolling from "./smoothScrolling";
-import choose from "./choose";
 import initArtAnimation from "./animation/artAnimation";
 import initVariantsAnimation from "./animation/variantsAnimation";
+import initEventsAnimation from "./animation/eventsAnimation";
+import initReviewsAnimation from "./animation/reviewsAnimation";
+import initTeamAnimation from "./animation/teamAnimation";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -26,11 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
   intro();
   fancybox();
   choose();
+
   initIntroAnimation();
   initEstheticsAnimation();
   initWatchAnimation();
   initArtAnimation();
   initVariantsAnimation();
+  initEventsAnimation();
+  initReviewsAnimation();
+  initTeamAnimation();
 });
 
 window.addEventListener("load", () => {
