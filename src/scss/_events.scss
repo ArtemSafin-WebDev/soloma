@@ -29,6 +29,7 @@
   text-transform: uppercase;
   margin-bottom: 4rem;
   font-family: var(--literature);
+  padding-left: 8.7rem;
 
   @include media.breakpoint(small-tablet) {
     font-size: 3.2rem;
@@ -111,56 +112,50 @@
     display: block;
     width: auto;
   }
-  .swiper {
-    margin: 0;
-    @include media.breakpoint(small-tablet) {
-      overflow: visible;
-    }
+}
+
+.events__slider-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @include media.breakpoint(small-tablet) {
+    overflow: visible;
+  }
+}
+
+.events__slider-track {
+  width: max-content;
+  flex-shrink: 0;
+}
+
+.events__slider-track-inner {
+  gap: 3rem;
+  width: max-content;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.events__slider-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+  width: calc(var(--container-width, 0) / 4 - 3rem * 3 / 4);
+  flex-shrink: 0;
+
+  &.active {
+    width: calc(var(--container-width, 0) / 2 - 3rem / 2);
   }
 
-  .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    box-sizing: border-box;
-    width: calc(25% - 3rem * 2 / 3);
-    margin-right: 3rem;
-
-    @include media.breakpointMF(tablet) {
-      &:nth-child(3n + 1) {
-        width: calc(50% - 3rem * 2 / 3);
-
-        .events__slider-card-title {
-          font-size: 3.2rem;
-          font-style: italic;
-          font-weight: 500;
-          line-height: normal;
-          letter-spacing: -0.096rem;
-        }
-
-        .events__slider-card-btn {
-          display: flex;
-        }
-      }
-    }
-
-    @include media.breakpoint(small-tablet) {
-      width: 46.7rem;
-      margin-right: 2rem;
-    }
-
-    @include media.breakpoint(mobile) {
-      margin-right: 2.5rem;
-      width: 26rem;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
+  &:last-child {
+    margin-right: 0;
   }
 }
 
 .events__slider-wrapper-inner {
+  width: 100%;
 }
 
 .events__slider-card {
