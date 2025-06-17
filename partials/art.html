@@ -1,10 +1,19 @@
 <section class="art">
     <div class="art__bg">
-        <picture>
+        <video autoplay muted loop playsinline class="art__bg-video">
+            <source src="/videos/art.mp4" type="video/mp4">
+            <!-- Фолбэк на изображение, если видео не поддерживается -->
+            <picture>
+                <source srcset="/images/art-mobile.webp" media="(max-width: 576px)">
+                <source srcset="/images/art-tablet.webp" media="(max-width: 768px)">
+                <img src="/images/art.webp" alt="" class="art__bg-image">
+            </picture>
+        </video>
+        <!--<picture>
             <source srcset="/images/art-mobile.webp" media="(max-width: 576px)">
             <source srcset="/images/art-tablet.webp" media="(max-width: 768px)">
             <img src="/images/art.webp" alt="" class="art__bg-image">
-        </picture>
+        </picture>-->
     </div>
     <div class="art__content">
         <div class="art__slogan">
