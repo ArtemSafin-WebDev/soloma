@@ -22,7 +22,7 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-gap: 2rem;
   grid-row-gap: 8rem;
-  padding-top: 26rem;
+  padding-top: 24rem;
   padding-bottom: 15.6rem;
 
   @include media.breakpoint(small-tablet) {
@@ -66,19 +66,57 @@
 
 .art__slogan {
   grid-column: 1 / 6;
+
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
 .art__slogan-text {
   display: block;
-  width: 100%;
   height: auto;
+  font-size: 9.6rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 95%;
+  letter-spacing: -0.288rem;
+
+  em {
+    font-size: 7.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83%;
+    text-transform: uppercase;
+    font-family: var(--literature);
+  }
 
   @include media.breakpoint(small-tablet) {
-    width: 56.4rem;
+    font-size: 7.6rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 95%;
+    letter-spacing: -0.228rem;
+
+    em {
+      font-size: 6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 83%;
+      text-transform: uppercase;
+    }
   }
 
   @include media.breakpoint(mobile) {
-    width: 100%;
+    font-size: 3.8rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 95%;
+    letter-spacing: -0.114rem;
+    em {
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 83%;
+      text-transform: uppercase;
+    }
   }
 }
 
