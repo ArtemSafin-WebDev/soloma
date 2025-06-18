@@ -29,6 +29,7 @@
   text-transform: uppercase;
   margin-bottom: 4rem;
   font-family: var(--literature);
+  padding-left: 8.5rem;
 
   @include media.breakpoint(small-tablet) {
     font-size: 3.2rem;
@@ -38,6 +39,7 @@
     letter-spacing: -0.096rem;
     text-transform: uppercase;
     margin-bottom: 3rem;
+    padding-left: 0;
   }
 
   @include media.breakpoint(mobile) {

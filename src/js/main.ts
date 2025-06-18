@@ -18,6 +18,8 @@ import initVariantsAnimation from "./animation/variantsAnimation";
 import initEventsAnimation from "./animation/eventsAnimation";
 import initReviewsAnimation from "./animation/reviewsAnimation";
 import initTeamAnimation from "./animation/teamAnimation";
+import callbackBtnHover from "./animation/callbackBtnHover";
+import header from "./header";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   intro();
   fancybox();
   choose();
-
+  header();
   initIntroAnimation();
   initEstheticsAnimation();
   initWatchAnimation();
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initEventsAnimation();
   initReviewsAnimation();
   initTeamAnimation();
+  callbackBtnHover();
 });
 
 window.addEventListener("load", () => {
