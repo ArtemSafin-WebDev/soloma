@@ -19,22 +19,50 @@ export default function choose() {
         const slides = Array.from(
           element.querySelectorAll<HTMLElement>(".swiper-slide")
         )!;
-        const pinHeight = element.querySelector<HTMLElement>(
-          ".choose__pin-height"
-        )!;
+        const pinHeight =
+          document.querySelector<HTMLElement>(".pin-spacer-height")!;
         const titles = Array.from(
           element.querySelectorAll<HTMLElement>(".choose__title")
         );
         const pinInner =
-          element.querySelector<HTMLElement>(".choose__pin-inner");
+          document.querySelector<HTMLElement>(".pin-spacer-sticky");
         const slideWidth = slides[0]?.offsetWidth;
+
+        const openCardByIndex = (index: number) => {
+          slides.forEach((slide) => {
+            const card = slide.querySelector(".choose__slider-card");
+            card?.classList.remove("active");
+          });
+          const activeCard = slides[index].querySelector(
+            ".choose__slider-card"
+          );
+          activeCard?.classList.add("active");
+          titles.forEach((title) => title.classList.remove("active"));
+          titles[index].classList.add("active");
+        };
+
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: pinHeight,
-            start: () => `top+=${pinInner?.offsetHeight} bottom`,
-            end: () =>
-              `top+=${pinHeight?.offsetHeight + pinHeight.offsetHeight} bottom`,
+            trigger: pinInner,
+            start: "bottom bottom+=80",
+            end: () => `bottom+=${pinHeight.offsetHeight} bottom+=80`,
             scrub: true,
+            onLeaveBack: () => {
+              slides.forEach((slide) => {
+                const card = slide.querySelector(".choose__slider-card");
+                card?.classList.remove("active");
+              });
+              titles.forEach((title) => title.classList.remove("active"));
+            },
+            onUpdate: (self) => {
+              const progress = self.progress;
+              console.log("PROGRESS", progress);
+              if (progress > 0.1 && progress < 0.5) {
+                openCardByIndex(0);
+              } else if (progress >= 0.5 && progress <= 1) {
+                openCardByIndex(1);
+              }
+            },
           },
         });
 
@@ -47,22 +75,6 @@ export default function choose() {
                 (slides.length - 1) * parseFloat(marginRight))
             );
           },
-        });
-
-        slides.forEach((slide, index) => {
-          const slidePosition = (index + 1) / slides.length;
-
-          console.log("Slide position", slidePosition);
-          tl.add(() => {
-            slides.forEach((slide) => {
-              const card = slide.querySelector(".choose__slider-card");
-              card?.classList.remove("active");
-            });
-            const activeCard = slide.querySelector(".choose__slider-card");
-            activeCard?.classList.add("active");
-            titles.forEach((title) => title.classList.remove("active"));
-            titles[index].classList.add("active");
-          }, slidePosition * 0.2);
         });
 
         return () => {
@@ -80,13 +92,36 @@ export default function choose() {
     mm.add("(max-width: 768px)", () => {
       const container = element.querySelector<HTMLElement>(".swiper");
       if (!container) return;
+      const titles = Array.from(
+        element.querySelectorAll<HTMLElement>(".choose__title")
+      );
+
+      const setActiveTitle = (index: number) => {
+        titles.forEach((title) => title.classList.remove("active"));
+        titles[index].classList.add("active");
+      };
       const instance = new Swiper(container, {
         slidesPerView: "auto",
         speed: 600,
         watchSlidesProgress: true,
+        longSwipesRatio: 0.2,
+        on: {
+          init: function (swiper) {
+            setActiveTitle(swiper.activeIndex);
+          },
+          slideChange: function (swiper) {
+            setActiveTitle(swiper.activeIndex);
+          },
+        },
+        init: false,
       });
 
-      return () => instance.destroy();
+      instance.init();
+
+      return () => {
+        instance.destroy();
+        setActiveTitle(0);
+      };
     });
   });
 }

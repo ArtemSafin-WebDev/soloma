@@ -8,9 +8,14 @@
   <body>
     {{> header }}
     <main class="page-main">
-      {{> intro }}
-      {{> esthetics }}
-      {{> choose }}
+      <div class="pin-spacer">
+        <div class="pin-spacer-height"></div>
+        <div class="pin-spacer-sticky">
+          {{> intro }}
+          {{> esthetics }}
+          {{> choose }}
+        </div>
+      </div>
       {{> watch }}
       {{> art }}
       {{> variants }}

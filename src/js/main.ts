@@ -20,6 +20,9 @@ import initReviewsAnimation from "./animation/reviewsAnimation";
 import initTeamAnimation from "./animation/teamAnimation";
 import callbackBtnHover from "./animation/callbackBtnHover";
 import header from "./header";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -45,4 +48,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
+  ScrollTrigger.refresh();
 });

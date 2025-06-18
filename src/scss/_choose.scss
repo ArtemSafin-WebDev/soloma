@@ -3,6 +3,7 @@
 
 .choose {
   @include utils.blockWrapper;
+
   margin-bottom: 13.5rem;
 
   @include media.breakpoint(small-tablet) {
@@ -69,38 +70,16 @@
   }
 }
 
-.choose__pin-height {
-  height: 100vh;
-
-  @include media.breakpoint(small-tablet) {
-    height: auto;
-  }
-}
-
-.choose__pin-inner {
-  position: sticky;
-  padding-bottom: 4rem;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
-  @include media.breakpoint(small-tablet) {
-    padding: 0;
-    position: static;
-    width: auto;
-  }
-}
-
 .choose__titles {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  align-self: flex-end;
-  justify-self: flex-start;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "stack";
-
+  display: contents;
   @include media.breakpoint(small-tablet) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: flex-end;
+    justify-self: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "stack";
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     align-self: flex-start;
@@ -121,13 +100,29 @@
   text-transform: uppercase;
   color: #161616;
   font-family: var(--aorom);
-  grid-area: stack;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
   transition: opacity 500ms, visibility 0s linear 500ms;
 
+  @include media.breakpointMF(tablet) {
+    &:nth-child(1) {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      justify-self: flex-start;
+      align-self: flex-start;
+    }
+
+    &:nth-child(2) {
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+      justify-self: flex-end;
+      align-self: flex-start;
+    }
+  }
+
   @include media.breakpoint(small-tablet) {
+    grid-area: stack;
     font-size: 57.7933rem;
     font-style: normal;
     font-weight: 400;
