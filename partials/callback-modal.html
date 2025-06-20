@@ -1,0 +1,54 @@
+<div class="callback-modal js-modal" id="callback-modal">
+    <div class="callback-modal__inner">
+        <button class="callback-modal__close js-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+                <path
+                    d="M18.6172 0.893555C19.203 0.307811 20.1526 0.307782 20.7383 0.893555C21.3241 1.47933 21.3241 2.42887 20.7383 3.01465L13.1866 10.5654L21.1924 18.5713C21.7781 19.1571 21.7782 20.1066 21.1924 20.6924C20.6067 21.2781 19.6571 21.2781 19.0714 20.6924L11.0655 12.6865L3.06061 20.6924C2.47483 21.2781 1.5253 21.2781 0.939514 20.6924C0.353735 20.1066 0.353751 19.1571 0.939514 18.5713L8.9444 10.5654L1.39362 3.01465C0.807829 2.42886 0.807829 1.47934 1.39362 0.893555C1.9794 0.307798 2.92893 0.307778 3.51471 0.893555L11.0655 8.44434L18.6172 0.893555Z" />
+            </svg>
+        </button>
+        <h3 class="callback-modal__title">
+            Оставьте свои контакты и наш менеджер свяжется с вами
+        </h3>
+        <form action="/" method="POST" class="callback-modal__form js-form">
+            <div class="callback-modal__form-fields">
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="text" class="callback-modal__form-input" placeholder="ФИО" name="your-name"
+                            required="">
+                    </div>
+                </div>
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="tel" class="callback-modal__form-input" placeholder="Телефон" name="your-phone"
+                            required="">
+                    </div>
+                </div>
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="email" class="callback-modal__form-input" placeholder="E-mail" name="your-email"
+                            required="">
+                    </div>
+                </div>
+            </div>
+            <div class="callback-modal__form-policy">
+                <label class="callback-modal__form-policy-checkbox">
+
+                    <input type="checkbox" name="policy" value="Y" class="callback-modal__form-policy-checkbox-input"
+                        required="">
+                    <span class="callback-modal__form-policy-checkbox-mark">
+
+                    </span>
+                    <span class="callback-modal__form-policy-checkbox-text">
+                        Нажимая кнопку «Оставить заявку», я даю свое согласие на обработку персональных данных, в
+                        соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на
+                        условиях и для целей,определенных в Согласии на обработку персональных данных*
+                    </span>
+
+                </label>
+            </div>
+            <button class="callback-modal__form-submit" type="submit">
+                Оставить заявку
+            </button>
+        </form>
+    </div>
+</div>

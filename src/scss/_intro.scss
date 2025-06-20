@@ -519,10 +519,10 @@
   display: flex;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      box-shadow: 0px 10px 35.2px 0px rgba(222, 87, 55, 0.3),
-        0px 5px 11.233px 0px rgba(222, 87, 55, 0.09),
-        0px 1.932px 4.25px 0px rgba(222, 87, 55, 0.04),
-        0px 0.637px 1.401px 0px rgba(222, 87, 55, 0.01);
+      box-shadow: 0rem 1rem 3.52rem 0rem rgba(222, 87, 55, 0.3),
+        0rem 0.5rem 1.1233rem 0rem rgba(222, 87, 55, 0.09),
+        0rem 0.1932rem 0.425rem 0rem rgba(222, 87, 55, 0.04),
+        0rem 0.0637rem 0.1401rem 0rem rgba(222, 87, 55, 0.01);
     }
   }
 

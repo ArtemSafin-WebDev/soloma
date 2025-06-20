@@ -226,6 +226,10 @@
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.5s;
+
+    .page-header__nav-list-item.active & {
+      grid-template-rows: 1fr;
+    }
   }
 }
 
@@ -300,6 +304,14 @@
       @include media.breakpoint(mobile) {
         border-width: 0.6rem 0.4rem 0 0.4rem;
         margin-top: 0.5rem;
+      }
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    .page-header__nav-list-item.active & {
+      &::after {
+        transform: rotate(180deg);
       }
     }
   }

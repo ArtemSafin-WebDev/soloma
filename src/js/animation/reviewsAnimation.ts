@@ -16,14 +16,14 @@ export default function initEventsAnimation() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: element,
-            start: "top+=80 bottom",
-            scrub: true,
+            start: "top+=150 bottom",
+            // scrub: true,
             end: "bottom bottom-=80",
             markers: false,
-            snap: {
-              snapTo: [0, 1],
-              duration: 2,
-            },
+            // snap: {
+            //   snapTo: [0, 1],
+            //   duration: 2,
+            // },
           },
         });
         tl.from(
@@ -56,6 +56,8 @@ export default function initEventsAnimation() {
           },
           "<"
         );
+
+        tl.timeScale(3);
       },
       element
     );

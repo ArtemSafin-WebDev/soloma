@@ -1,0 +1,125 @@
+@use "utils";
+@use "media";
+
+.success-modal {
+  background: rgba(11, 11, 11, 0.3);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior-y: contain;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  padding: var(--content-padding);
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.4s, visibility 0.4s;
+  }
+}
+
+.success-modal__inner {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 62rem;
+  border-radius: 3rem;
+  background: #0c0c0c;
+  box-shadow: 0rem 0rem 8rem 0rem rgba(222, 87, 55, 0.1);
+  color: white;
+  padding: 5rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  background-image: url("../images/semicircle.svg");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: 7rem auto;
+
+  @include media.breakpoint(mobile) {
+    padding: 2rem;
+    padding-top: 12rem;
+    padding-bottom: 14rem;
+    border-radius: 2rem;
+
+    box-shadow: 0rem 0rem 8rem 0rem rgba(222, 87, 55, 0.1);
+    max-width: none;
+  }
+}
+
+.success-modal__close {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 2;
+
+  @include media.breakpoint(mobile) {
+    right: 2.5rem;
+    top: 2.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: rgba(255, 255, 255, 0.5);
+    transition: fill 0.2s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      svg {
+        fill: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+
+.success-modal__decor {
+  align-self: center;
+  width: 25rem;
+  height: auto;
+  max-width: 100%;
+  @include media.breakpoint(mobile) {
+    width: 12.6rem;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.success-modal__title {
+  text-align: center;
+  align-self: center;
+  font-size: 3.2rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.096rem;
+  margin-top: 4.5rem;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.054rem;
+    margin-top: 3rem;
+  }
+}

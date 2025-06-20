@@ -22,6 +22,8 @@ import callbackBtnHover from "./animation/callbackBtnHover";
 import header from "./header";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import modals from "./modals";
+import forms from "./forms";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,10 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
   events();
   intro();
   fancybox();
-  choose();
+  modals();
   header();
+  forms();
   initIntroAnimation();
   initEstheticsAnimation();
+  choose();
   initWatchAnimation();
   initArtAnimation();
   initVariantsAnimation();
