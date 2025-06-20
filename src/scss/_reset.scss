@@ -240,22 +240,22 @@ source {
   display: contents;
 }
 
-.pin-spacer {
-}
+// .pin-spacer {
+// }
 
-.pin-spacer-height {
-  height: 180vh;
-  @include media.breakpoint(small-tablet) {
-    height: auto;
-  }
-}
+// .pin-spacer-height {
+//   height: 180vh;
+//   @include media.breakpoint(small-tablet) {
+//     height: auto;
+//   }
+// }
 
-.pin-spacer-sticky {
-  position: sticky;
-  left: 0;
-  bottom: 80px;
+// .pin-spacer-sticky {
+//   position: sticky;
+//   left: 0;
+//   bottom: 80px;
 
-  @include media.breakpoint(small-tablet) {
-    position: static;
-  }
-}
+//   @include media.breakpoint(small-tablet) {
+//     position: static;
+//   }
+// }

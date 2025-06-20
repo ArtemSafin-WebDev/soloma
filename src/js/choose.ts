@@ -19,8 +19,7 @@ export default function choose() {
         const slides = Array.from(
           element.querySelectorAll<HTMLElement>(".swiper-slide")
         )!;
-        const pinHeight =
-          document.querySelector<HTMLElement>(".pin-spacer-height")!;
+
         const titles = Array.from(
           element.querySelectorAll<HTMLElement>(".choose__title")
         );
@@ -44,9 +43,12 @@ export default function choose() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: pinInner,
-            start: "bottom bottom+=80",
-            end: () => `bottom+=${pinHeight.offsetHeight} bottom+=80`,
+            start: "bottom bottom-=80",
+            end: () => `bottom+=100% bottom-=80`,
             scrub: true,
+            markers: false,
+            pin: document.querySelector(".pin-spacer"),
+            pinSpacing: true,
             onLeaveBack: () => {
               slides.forEach((slide) => {
                 const card = slide.querySelector(".choose__slider-card");
