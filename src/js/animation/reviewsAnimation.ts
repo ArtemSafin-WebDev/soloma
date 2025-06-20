@@ -4,21 +4,60 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function initEventsAnimation() {
-  const trigger = document.querySelector(".reviews")
-  const items = document.querySelectorAll(".reviews__heading, .reviews__slider")
+  const elements = Array.from(
+    document.querySelectorAll<HTMLElement>(".reviews")
+  );
+  elements.forEach((element) => {
+    let mm = gsap.matchMedia();
 
-  gsap.set(items, { y: 40, opacity: 0 })
+    mm.add(
+      "(min-width: 769px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top+=80 bottom",
+            scrub: true,
+            end: "bottom bottom-=80",
+            markers: false,
+            snap: {
+              snapTo: [0, 1],
+              duration: 2,
+            },
+          },
+        });
+        tl.from(
+          ".reviews__content",
+          {
+            duration: 3,
+            ease: "power2.out",
+            y: 400,
+            autoAlpha: 0,
+          },
+          0
+        );
+        tl.from(
+          ".reviews__slide-card",
+          {
+            xPercent: 50,
+            duration: 3,
+            ease: "power2.out",
+            autoAlpha: 0,
+          },
+          2
+        );
 
-  items?.forEach((item, index) => {
-    gsap.to(item, {
-      y: 0,
-      duration: 1,
-      opacity: 1,
-      delay: index * 0.2,
-      scrollTrigger: {
-        trigger: trigger,
-        start: "top 40%"
-      }
-    })
-  })
+        tl.from(
+          ".reviews__slide-image-wrapper",
+          {
+            duration: 3,
+            ease: "power2.out",
+            autoAlpha: 0,
+          },
+          "<"
+        );
+      },
+      element
+    );
+  });
 }

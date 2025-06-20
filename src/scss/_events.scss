@@ -125,12 +125,16 @@
     flex-direction: column;
     height: auto;
     box-sizing: border-box;
-    width: calc(25% - 3rem * 2 / 3);
+    width: calc(25% - 3rem * 3 / 4);
     margin-right: 3rem;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     @include media.breakpointMF(tablet) {
-      &:nth-child(3n + 1) {
-        width: calc(50% - 3rem * 2 / 3);
+      &--large {
+        width: calc(50% - 3rem / 2);
 
         .events__slider-card-title {
           font-size: 3.2rem;
@@ -155,10 +159,6 @@
       margin-right: 2.5rem;
       width: 26rem;
     }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 }
 
@@ -175,6 +175,14 @@
   box-shadow: 0rem 0rem 2.9284rem 0rem rgba(0, 0, 0, 0.5);
   overflow: hidden;
   border-radius: 0rem 3rem;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .events__slider-card-bg-image {
+        transform: scale(1.02);
+      }
+    }
+  }
   @include media.breakpoint(small-tablet) {
     min-height: 46rem;
     border-radius: 0rem 2.1989rem;
@@ -230,6 +238,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  transition: transform 0.4s;
 }
 
 .events__slider-card-content {

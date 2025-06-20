@@ -4,21 +4,54 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function initEventsAnimation() {
-  const trigger = document.querySelector(".events")
-  const items = document.querySelectorAll(".events__heading, .events__slider")
+  const elements = Array.from(
+    document.querySelectorAll<HTMLElement>(".events")
+  );
+  elements.forEach((element) => {
+    let mm = gsap.matchMedia();
 
-  gsap.set(items, { y: 40, opacity: 0 })
+    mm.add(
+      "(min-width: 769px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top+=40% bottom",
+            scrub: true,
+            end: "bottom bottom-=80",
+            markers: false,
+            snap: {
+              snapTo: [0, 1],
+              duration: 2,
+            },
+          },
+        });
+        tl.from(
+          ".events__content",
+          {
+            duration: 3,
+            ease: "power2.out",
+            y: 400,
+            autoAlpha: 0,
+          },
+          0
+        );
 
-  items?.forEach((item, index) => {
-    gsap.to(item, {
-      y: 0,
-      duration: 1,
-      opacity: 1,
-      delay: index * 0.2,
-      scrollTrigger: {
-        trigger: trigger,
-        start: "top 40%"
-      }
-    })
-  })
+        tl.from(".events__heading", {
+          autoAlpha: 0,
+          duration: 2,
+          y: 50,
+          ease: "power2.out",
+        });
+        tl.from(".events__slider-card", {
+          xPercent: 50,
+          duration: 4,
+          ease: "power2.out",
+          autoAlpha: 0,
+          stagger: 0.6,
+        });
+      },
+      element
+    );
+  });
 }

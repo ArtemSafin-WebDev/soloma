@@ -121,6 +121,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  z-index: 4;
 
   @include media.breakpoint(small-tablet) {
     border-radius: 0rem 1.9861rem;
