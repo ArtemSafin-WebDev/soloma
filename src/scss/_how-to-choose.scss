@@ -1,0 +1,122 @@
+@use "utils";
+@use "media";
+
+.how-to-choose {
+  @include utils.blockWrapper;
+  margin-bottom: 9.7rem;
+
+  @include media.breakpoint(small-tablet) {
+    display: none;
+  }
+}
+
+.how-to-choose__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.how-to-choose__heading {
+  font-size: 5.1484rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.1545rem;
+  text-transform: uppercase;
+  font-family: var(--literature);
+}
+
+.how-to-choose__text {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.048rem;
+  max-width: 105rem;
+}
+
+.how-to-choose__wrapper {
+  padding: 3.2rem;
+  border-radius: 0 2.381rem;
+  background: #141414;
+  box-shadow: 0 0 2.9284rem 0 rgba(0, 0, 0, 0.5);
+  padding-right: 10rem;
+  display: grid;
+  grid-template-columns: minmax(0, 2.46fr) repeat(5, minmax(0, 1fr));
+  grid-gap: 6rem;
+  grid-row-gap: 1.2rem;
+  margin-top: 4.6rem;
+}
+
+.how-to-choose__header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-gap: 6rem;
+  grid-row-gap: 1.2rem;
+}
+
+.how-to-choose__header-item {
+  font-size: 3.9158rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 83%;
+  letter-spacing: -0.1566rem;
+  text-transform: uppercase;
+  font-family: var(--aorom);
+  text-align: center;
+  &:nth-child(1) {
+    grid-column: 2 / 3;
+  }
+}
+
+.how-to-choose__body {
+  margin-top: 0.4rem;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-gap: 6rem;
+  grid-row-gap: 1rem;
+}
+
+.how-to-choose__row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-gap: 4rem;
+  grid-row-gap: 1.2rem;
+  align-items: center;
+
+  &--bottom-margin {
+    margin-bottom: 1.8rem;
+  }
+}
+
+.how-to-choose__cell {
+  font-size: 1.2699rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--primary-color);
+  }
+  &:not(:nth-child(1)) {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.how-to-choose__block-title {
+  font-size: 1.2699rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 120%;
+  color: var(--primary-color);
+}

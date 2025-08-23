@@ -24,6 +24,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import modals from "./modals";
 import forms from "./forms";
+import detailGallery from "./detailGallery";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initReviewsAnimation();
   initTeamAnimation();
   callbackBtnHover();
+  detailGallery();
 });
 
 window.addEventListener("load", () => {
