@@ -1,0 +1,193 @@
+@use "utils";
+@use "media";
+
+.tabs-nav {
+  @include media.breakpoint(mobile) {
+    align-self: flex-start;
+    position: relative;
+  }
+}
+
+.tabs-nav__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  @include media.breakpoint(small-tablet) {
+    gap: 1rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 1.6rem;
+  }
+}
+
+.tabs-nav__list-item {
+  @include media.breakpoint(mobile) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.tabs-nav__link {
+  display: block;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.054rem;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0.6rem 2.4rem;
+  border-radius: 100rem;
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s;
+
+  &:link,
+  &:visited {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      background: #de5737;
+      box-shadow: 0 1.6rem 3.52rem 0 rgba(222, 87, 55, 0.3),
+        0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
+        0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+        0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+      color: white;
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.054rem;
+    padding: 0.6rem 2.2rem;
+  }
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.042rem;
+    padding: 0.5rem 0;
+    border-radius: 0;
+    border: none;
+    color: white;
+
+    &:link,
+    &:visited {
+      color: white;
+    }
+  }
+}
+
+.tabs-nav__select-btn {
+  display: none;
+
+  @include media.breakpoint(mobile) {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.042rem;
+    color: white;
+    gap: 0.5rem;
+    padding: 0.3rem 1.65rem;
+    justify-content: space-between;
+    text-align: left;
+    border-radius: 100rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.15);
+    background: #de5737;
+    box-shadow: 0 1.6rem 3.52rem 0 rgba(222, 87, 55, 0.3),
+      0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
+      0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+      0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+    width: 20rem;
+    max-width: 100%;
+    svg {
+      flex-shrink: 0;
+      height: 0.6996rem;
+      width: 1.0996rem;
+      fill: currentColor;
+      transition: transform 0.2s;
+    }
+
+    .open & {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.tabs-nav__select-dropdown {
+  @include media.breakpoint(mobile) {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: auto;
+    padding-top: 1.7rem;
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+    .open & {
+      opacity: 1;
+      visibility: inherit;
+      transition: opacity 0.4s, visibility 0.4s;
+    }
+  }
+}
+
+.tabs-nav__select-dropdown-inner {
+  @include media.breakpoint(mobile) {
+    border-radius: 2rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.15);
+    background: #de5737;
+    box-shadow: 0 1.6rem 3.52rem 0 rgba(222, 87, 55, 0.3),
+      0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
+      0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+      0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+    overflow: hidden;
+    color: white;
+    padding-right: 0.2rem;
+  }
+}
+
+.tabs-nav__select-scroll-wrapper {
+  @include media.breakpoint(mobile) {
+    overflow-x: hidden;
+    max-height: 27rem;
+
+    &::-webkit-scrollbar {
+      // background-color: white;
+      width: 0.2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: white;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(white, 0.4);
+    }
+  }
+}

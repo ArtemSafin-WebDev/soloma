@@ -526,7 +526,7 @@
     }
   }
 
-  @include media.breakpoint(tablet) {
+  @include media.breakpoint(small-tablet) {
     font-size: 2rem;
     font-style: italic;
     font-weight: 600;

@@ -1,0 +1,284 @@
+@use "utils";
+@use "media";
+
+.about-other {
+  @include utils.blockWrapper;
+  margin-bottom: 21rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 7.4rem;
+  }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 0;
+  }
+}
+
+.about-other__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-other__heading {
+  align-self: center;
+  text-align: center;
+  font-size: 12.0991rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 83%;
+  letter-spacing: -0.484rem;
+  text-transform: uppercase;
+  font-family: var(--aorom);
+  align-self: center;
+  b {
+    font-weight: inherit;
+    color: var(--primary-color);
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 12.0991rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83%;
+    letter-spacing: -0.484rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 5.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83%;
+    letter-spacing: -0.224rem;
+    text-transform: uppercase;
+  }
+}
+
+.about-other__text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 2rem;
+  max-width: 70rem;
+  align-self: center;
+  text-align: center;
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2rem;
+  }
+}
+
+.about-other__list {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 147rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 2.5rem;
+  grid-auto-rows: 1fr;
+  margin-top: 5rem;
+  @include media.breakpoint(small-tablet) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 3rem;
+    max-width: none;
+    margin: 0;
+    margin-top: 4rem;
+  }
+  @include media.breakpoint(mobile) {
+    grid-gap: 2rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.about-other__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-other__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+  position: relative;
+  isolation: isolate;
+  border-radius: 0 5rem;
+  background: #141414;
+  box-shadow: 0 0 2.9284rem 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  flex-grow: 1;
+  @include media.breakpoint(small-tablet) {
+    border-radius: 0 5rem;
+    background: #141414;
+    box-shadow: 0 0 2.9284rem 0 rgba(0, 0, 0, 0.5);
+  }
+  @include media.breakpoint(mobile) {
+    border-radius: 0 2.9459rem;
+    background: #141414;
+    box-shadow: 0 0 1.7254rem 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 58.3%;
+    grid-area: stack;
+  }
+}
+
+.about-other__card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.about-other__card-bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-other__card-content {
+  grid-area: stack;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  text-align: center;
+  align-items: center;
+  @include media.breakpoint(mobile) {
+    padding: 1.6rem;
+    padding-top: 2.4rem;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 3.1rem;
+    height: 3.1rem;
+    align-self: center;
+    background-size: contain;
+    background-color: no-repeat;
+    background-position: center;
+    background-image: url("../images/about-other-pattern.svg");
+    @include media.breakpoint(mobile) {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}
+
+.about-other__card-logo {
+  width: 11.9rem;
+  margin-top: 4.2rem;
+  height: auto;
+  @include media.breakpoint(mobile) {
+    margin-top: 2.5rem;
+    width: 7rem;
+  }
+}
+
+.about-other__card-heading {
+  font-size: 3.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.114rem;
+  text-transform: uppercase;
+  font-family: var(--literature);
+  margin-top: 1rem;
+  @include media.breakpoint(mobile) {
+    font-size: 2.2389rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.0672rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+}
+
+.about-other__card-text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 2rem;
+  max-width: 48rem;
+  margin-bottom: auto;
+  @include media.breakpoint(mobile) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1.2rem;
+    max-width: 30rem;
+  }
+}
+
+.about-other__card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.06rem;
+  padding: 1rem 4.6rem;
+  border-radius: 100rem;
+  border: 0.2rem solid rgba(255, 255, 255, 0.15);
+  background: #de5737;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1.6rem 3.52rem 0 rgba(222, 87, 55, 0.3),
+    0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
+    0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+    0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+  justify-content: center;
+  display: flex;
+  margin-top: 2.5rem;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0rem 1rem 3.52rem 0rem rgba(222, 87, 55, 0.3),
+        0rem 0.5rem 1.1233rem 0rem rgba(222, 87, 55, 0.09),
+        0rem 0.1932rem 0.425rem 0rem rgba(222, 87, 55, 0.04),
+        0rem 0.0637rem 0.1401rem 0rem rgba(222, 87, 55, 0.01);
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.06rem;
+    padding: 1rem 2.4rem;
+    box-shadow: 0 1.6rem 3.52rem 0 rgba(222, 87, 55, 0.3),
+      0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
+      0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+      0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+    margin-top: 2.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.036rem;
+    padding: 0.9rem 2.4rem;
+    margin-top: 1.2rem;
+  }
+}

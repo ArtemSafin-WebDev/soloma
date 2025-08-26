@@ -30,6 +30,7 @@ html {
   scroll-padding-top: 10rem;
   @include media.breakpoint(small-tablet) {
     font-size: 10px;
+    scroll-padding-top: 8rem;
   }
 }
 

@@ -180,10 +180,8 @@
   border: 0.2rem solid rgba(255, 255, 255, 0.15);
   background: #de5737;
   transition: box-shadow 0.2s;
-  box-shadow: 0 1.6rem 3.52rem 0 rgba(222, 87, 55, 0.3),
-    0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
-    0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
-    0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+  box-shadow: 0rem 0.1932rem 0.425rem 0rem rgba(222, 87, 55, 0.04),
+    0rem 0.0637rem 0.1401rem 0rem rgba(222, 87, 55, 0.01);
   justify-content: center;
   display: flex;
   @media (hover: hover) and (pointer: fine) {
@@ -195,7 +193,7 @@
     }
   }
 
-  @include media.breakpoint(tablet) {
+  @include media.breakpoint(small-tablet) {
     font-size: 2rem;
     font-style: italic;
     font-weight: 600;
@@ -240,7 +238,7 @@
     }
   }
 
-  @include media.breakpoint(tablet) {
+  @include media.breakpoint(small-tablet) {
     font-size: 2rem;
     font-style: italic;
     font-weight: 600;

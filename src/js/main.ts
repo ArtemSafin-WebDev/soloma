@@ -25,6 +25,7 @@ import { ScrollTrigger } from "gsap/all";
 import modals from "./modals";
 import forms from "./forms";
 import detailGallery from "./detailGallery";
+import tabsNav from "./tabsNav";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTeamAnimation();
   callbackBtnHover();
   detailGallery();
+  tabsNav();
 });
 
 window.addEventListener("load", () => {

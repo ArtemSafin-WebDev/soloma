@@ -2,6 +2,7 @@
 @use "variables";
 @use "reset";
 @use "page-footer";
+@use "tabs-nav";
 @use "rules";
 @use "faq";
 @use "art";
@@ -20,3 +21,8 @@
 @use "detail-intro";
 @use "how-to-choose";
 @use "detail-gallery";
+@use "detail-programs";
+@use "program-intro";
+@use "about-intro";
+@use "about-other";
+@use "divnaya-included";
