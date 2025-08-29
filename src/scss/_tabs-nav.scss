@@ -52,6 +52,16 @@
     color: rgba(255, 255, 255, 0.3);
   }
 
+  &.active {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: #de5737;
+    box-shadow: 0 1.6rem 3.52rem 0 rgba(222, 87, 55, 0.3),
+      0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
+      0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+      0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+    color: white;
+  }
+
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       border-color: rgba(255, 255, 255, 0.15);
@@ -113,8 +123,8 @@
       0 0.5106rem 1.1233rem 0 rgba(222, 87, 55, 0.09),
       0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
       0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
-    width: 20rem;
     max-width: 100%;
+    white-space: nowrap;
     svg {
       flex-shrink: 0;
       height: 0.6996rem;
@@ -131,13 +141,20 @@
   }
 }
 
+.tabs-nav__select-btn-text {
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .tabs-nav__select-dropdown {
   @include media.breakpoint(mobile) {
     display: block;
     position: absolute;
     left: 0;
     top: 100%;
-    width: 100%;
+    width: max-content;
+    max-width: calc(100vw - var(--content-padding, 0) * 2);
     height: auto;
     padding-top: 1.7rem;
     z-index: 15;

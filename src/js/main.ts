@@ -26,6 +26,7 @@ import modals from "./modals";
 import forms from "./forms";
 import detailGallery from "./detailGallery";
 import tabsNav from "./tabsNav";
+import tabs from "./tabs";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   callbackBtnHover();
   detailGallery();
   tabsNav();
+  tabs();
 });
 
 window.addEventListener("load", () => {

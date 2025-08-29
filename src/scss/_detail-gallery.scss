@@ -314,6 +314,13 @@
       background-size: auto 100%;
       background-repeat: no-repeat;
     }
+
+    &--tihaya {
+      &:nth-child(1),
+      &:nth-child(2) {
+        background-image: url("../images/pattern-tihaya.svg");
+      }
+    }
   }
 }
 

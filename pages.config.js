@@ -3,6 +3,7 @@ import home from "./pages-data/home";
 import mainteinance from "./pages-data/mainteinance";
 import program from "./pages-data/program";
 import about from "./pages-data/about";
+import tihaya from "./pages-data/tihaya";
 
 const pagesConfig = {
   ...home,
@@ -10,6 +11,7 @@ const pagesConfig = {
   ...divnaya,
   ...program,
   ...about,
+  ...tihaya,
 };
 
 export default pagesConfig;

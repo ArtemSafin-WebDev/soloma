@@ -1,0 +1,229 @@
+@use "utils";
+@use "media";
+
+.about-quote {
+  @include utils.blockWrapper;
+  margin-bottom: 20rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 12rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 7rem;
+  }
+}
+
+.about-quote__content {
+  @include utils.blockContent;
+  position: relative;
+  z-index: 1;
+  max-width: 174rem;
+  width: 100%;
+  justify-self: center;
+}
+
+.about-quote__pattern {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72rem;
+  height: auto;
+  z-index: -1;
+  pointer-events: none;
+
+  @include media.breakpoint(small-tablet) {
+    transform: none;
+    left: 0;
+    width: 100%;
+    top: auto;
+    bottom: -8rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 37rem;
+    max-width: none;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.about-quote__card {
+  display: flex;
+  align-items: flex-end;
+  gap: 3rem;
+  min-height: 46.5rem;
+  border-radius: 3rem;
+  border: 0.2rem solid white;
+  position: relative;
+  z-index: 1;
+
+  @include media.breakpoint(small-tablet) {
+    min-height: auto;
+    padding: 4.8rem;
+    gap: 3rem;
+    padding-right: 3rem;
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 0;
+    gap: 0rem;
+  }
+
+  &::before {
+    content: "";
+    height: 10.5rem;
+    background-color: var(--bg-color);
+    position: absolute;
+    pointer-events: none;
+    top: 6rem;
+    right: 0;
+    width: 0.8rem;
+    margin-right: -0.5rem;
+    @include media.breakpoint(small-tablet) {
+      height: 10.6rem;
+      top: 6rem;
+    }
+  }
+  &::after {
+    content: "";
+    height: 4.2rem;
+    background-color: var(--bg-color);
+    position: absolute;
+    pointer-events: none;
+    top: 11rem;
+    left: 0;
+    width: 0.8rem;
+    margin-left: -0.5rem;
+    @include media.breakpoint(small-tablet) {
+      height: 2.4rem;
+      top: 10rem;
+    }
+  }
+}
+
+.about-quote__image-wrapper {
+  width: 49.6rem;
+  flex-shrink: 0;
+  margin-left: -1.8rem;
+  position: relative;
+  align-self: flex-end;
+  z-index: 10;
+  @include media.breakpoint(small-tablet) {
+    width: 40rem;
+    align-self: center;
+    order: 20;
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+.about-quote__image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+
+  @include media.breakpoint(small-tablet) {
+    position: static;
+  }
+}
+
+.about-quote__wrapper {
+  width: 30%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  padding-right: 2rem;
+  @include media.breakpoint(small-tablet) {
+    padding: 0;
+    width: auto;
+    flex-grow: 0;
+    gap: 2rem;
+  }
+}
+
+.about-quote__text {
+  font-size: 4.7036rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 120%;
+  font-family: var(--inter);
+  color: rgba(white, 0.3);
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  em {
+    font-style: inherit;
+    color: white;
+  }
+}
+
+.about-quote__author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.about-quote__author-name {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.054rem;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.042rem;
+  }
+
+  span {
+    color: #de5737;
+  }
+}
+
+.about-quote__author-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.036rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.03rem;
+  }
+}

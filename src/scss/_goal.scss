@@ -1,0 +1,150 @@
+@use "utils";
+@use "media";
+
+.goal {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+  position: relative;
+  z-index: 1;
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 14rem;
+  }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 4rem;
+  }
+}
+
+.goal__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.goal__bg-pattern {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.goal__top-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 13rem;
+  grid-template-areas: "left center right";
+  align-items: center;
+  @include media.breakpoint(small-tablet) {
+    grid-gap: 8.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    gap: 2rem;
+  }
+}
+
+.goal__left-pattern {
+  grid-area: left;
+  justify-self: flex-end;
+  height: 3.2rem;
+  width: auto;
+
+  @include media.breakpoint(mobile) {
+    justify-self: flex-start;
+  }
+
+  @include media.breakpoint(mobile) {
+    height: 1.6rem;
+  }
+}
+
+.goal__right-pattern {
+  grid-area: right;
+  height: 3.2rem;
+  width: auto;
+  justify-self: flex-start;
+  @include media.breakpoint(mobile) {
+    justify-self: flex-end;
+  }
+  @include media.breakpoint(mobile) {
+    height: 1.6rem;
+  }
+}
+
+.goal__heading {
+  grid-area: center;
+  text-align: center;
+  justify-self: center;
+  font-size: 16rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 83%;
+  letter-spacing: -0.64rem;
+  text-transform: uppercase;
+  font-family: var(--aorom);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    margin-top: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    top: 100%;
+    background: #de5737;
+    @include media.breakpoint(mobile) {
+      margin-top: 0.6rem;
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 16rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83%;
+    letter-spacing: -0.64rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 7.2198rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83%;
+    letter-spacing: -0.2888rem;
+    text-transform: uppercase;
+  }
+}
+
+.goal__text {
+  align-self: center;
+  margin-top: 4.5rem;
+  max-width: 75rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  @include media.breakpoint(small-tablet) {
+    max-width: 52rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  @include media.breakpoint(mobile) {
+    max-width: 24rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin-top: 2rem;
+  }
+}
