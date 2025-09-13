@@ -4,6 +4,7 @@ import mainteinance from "./pages-data/mainteinance";
 import program from "./pages-data/program";
 import about from "./pages-data/about";
 import tihaya from "./pages-data/tihaya";
+import contacts from "./pages-data/contacts";
 
 const pagesConfig = {
   ...home,
@@ -12,6 +13,7 @@ const pagesConfig = {
   ...program,
   ...about,
   ...tihaya,
+  ...contacts,
 };
 
 export default pagesConfig;

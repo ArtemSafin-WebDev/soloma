@@ -2,6 +2,8 @@
 @use "media";
 
 .rules {
+  position: relative;
+  z-index: 2;
   @include utils.blockWrapper;
   margin-bottom: 4rem;
   @include media.breakpoint(small-tablet) {
@@ -22,7 +24,7 @@
 .rules__card {
   border-radius: 3rem 0rem;
   background: #141414;
-  box-shadow: 0rem 0rem 3rem 0px rgba(0, 0, 0, 0.5);
+
   column-count: 2;
   column-gap: 3rem;
   padding: 4rem;
@@ -31,17 +33,24 @@
   font-weight: 400;
   line-height: 120%;
 
+  &:not(.rules__card--permanent) {
+    box-shadow: 0rem 0rem 3rem 0px rgba(0, 0, 0, 0.5);
+  }
+
   @include media.breakpoint(small-tablet) {
-    background: none;
-    box-shadow: none;
-    column-count: revert;
-    column-gap: revert;
-    border-radius: revert;
-    padding: 0;
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    padding: 3rem;
+    column-count: revert;
+    column-gap: revert;
+    &:not(.rules__card--permanent) {
+      background: none;
+      box-shadow: none;
+      border-radius: revert;
+      padding: 0;
+    }
   }
 
   @include media.breakpoint(mobile) {
@@ -49,6 +58,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    padding: 2rem 1.5rem;
+
+    &:not(.rules__card--permanent) {
+      padding: 0;
+      border-radius: 0;
+    }
   }
 
   & > * {
