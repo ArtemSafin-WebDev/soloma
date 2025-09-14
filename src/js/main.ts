@@ -27,6 +27,7 @@ import forms from "./forms";
 import detailGallery from "./detailGallery";
 import tabsNav from "./tabsNav";
 import tabs from "./tabs";
+import mission from "./mission";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -54,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   detailGallery();
   tabsNav();
   tabs();
+  mission();
 });
 
 window.addEventListener("load", () => {

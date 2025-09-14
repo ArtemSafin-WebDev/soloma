@@ -1,0 +1,213 @@
+@use "utils";
+@use "media";
+
+.climate {
+  @include utils.blockWrapper;
+  margin-bottom: 30rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 16.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 5.8rem;
+  }
+}
+
+.climate__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 2rem;
+
+  @include media.breakpoint(small-tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    gap: 0;
+  }
+}
+
+.climate__text-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+
+  @include media.breakpoint(small-tablet) {
+    padding: 0;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.climate__title {
+  font-size: 5.1485rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.1545rem;
+  text-transform: uppercase;
+  font-family: var(--literature);
+  margin-bottom: 2.8rem;
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 4.0066rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.1202rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.8255rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.0548rem;
+    text-transform: uppercase;
+    order: -15;
+    margin-bottom: 2.5rem;
+  }
+
+  em {
+    font-family: var(--inter);
+    color: var(--primary-color);
+    font-size: 4.9224rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    @include media.breakpoint(small-tablet) {
+      font-size: 3.8307rem;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 120%;
+      text-transform: uppercase;
+    }
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.7454rem;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 120%;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.climate__title-large {
+  font-size: 12.5548rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80%;
+  letter-spacing: -0.3766rem;
+  text-transform: uppercase;
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 9.7704rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    letter-spacing: -0.2931rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 4.4517rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.1336rem;
+    text-transform: uppercase;
+  }
+}
+
+.climate__text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.048rem;
+  max-width: 48rem;
+  margin-bottom: 3.2rem;
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.048rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.042rem;
+    max-width: 27rem;
+    text-wrap: pretty;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-of-type(2) {
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: 6.4rem;
+    @include media.breakpoint(small-tablet) {
+      margin-right: 0;
+    }
+
+    @include media.breakpoint(mobile) {
+      max-width: 24rem;
+    }
+  }
+}
+
+.climate__image-wrapper {
+  margin-right: calc((100vw - 100% * 2) / 2 * -1);
+  position: relative;
+  min-height: 51rem;
+  border-top-left-radius: 3rem;
+  background: #141414;
+  box-shadow: 0 0 2.9284rem 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  @include media.breakpoint(small-tablet) {
+    width: 100%;
+    min-height: auto;
+    margin-right: 0;
+    border-radius: 2.0765rem 0;
+    background: #141414;
+    box-shadow: 0 0 2.0269rem 0 rgba(0, 0, 0, 0.5);
+    aspect-ratio: 706 / 354;
+  }
+
+  @include media.breakpoint(mobile) {
+    order: -10;
+    border-radius: 0.8412rem 0;
+    background: #141414;
+    box-shadow: 0 0 0.8211rem 0 rgba(0, 0, 0, 0.5);
+    aspect-ratio: 285 / 143;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.climate__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
