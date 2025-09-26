@@ -29,7 +29,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 10rem;
 
-  // font-size: 10px;
+  // font-size: 8px;
+
   @include media.breakpoint(small-tablet) {
     font-size: 10px;
     scroll-padding-top: 8rem;
@@ -228,6 +229,11 @@ select:-webkit-autofill:focus {
   letter-spacing: -0.048rem;
   color: var(--primary-color);
   margin-top: 1rem;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
 }
 
 .page-main {
