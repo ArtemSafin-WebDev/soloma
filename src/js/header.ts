@@ -12,6 +12,12 @@ export default function header() {
   );
   items.forEach((item) => {
     const link = item.querySelector<HTMLLinkElement>(".page-header__nav-link");
+    const subMenu = item.querySelector<HTMLLinkElement>(".page-header__nav-submenu");
+
+    if (!subMenu){
+      return;
+    }
+
     link?.addEventListener("click", (event) => {
       // if window width is less than 769px, then prevent default, use window.matchMedia
       if (window.matchMedia("(max-width: 768px)").matches) {
