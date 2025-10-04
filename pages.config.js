@@ -5,9 +5,9 @@ import program from "./pages-data/program";
 import about from "./pages-data/about";
 import tihaya from "./pages-data/tihaya";
 import contacts from "./pages-data/contacts";
-
 import womensClub from "./pages-data/womens-club";
 import mensClub from "./pages-data/mens-club";
+import certificates from "./pages-data/certificates";
 
 const pagesConfig = {
   ...home,
@@ -19,6 +19,7 @@ const pagesConfig = {
   ...contacts,
   ...mensClub,
   ...womensClub,
+  ...certificates,
 };
 
 export default pagesConfig;

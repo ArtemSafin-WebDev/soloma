@@ -1,0 +1,267 @@
+@use "utils";
+@use "media";
+
+.certificates {
+  @include utils.blockWrapper;
+  margin-bottom: 9rem;
+  padding-top: 15rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 6.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding-top: 7rem;
+    margin-bottom: 0rem;
+  }
+}
+
+.certificates__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+}
+
+.certificates__heading {
+  font-size: 52.1555rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 83%;
+  letter-spacing: -2.0862rem;
+  text-transform: uppercase;
+  justify-self: center;
+  text-align: center;
+  grid-area: stack;
+  font-family: var(--aorom);
+  background: linear-gradient(
+    180deg,
+    #4e4d4d -47.23%,
+    rgba(78, 77, 77, 0) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-self: flex-start;
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 24.8486rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83%;
+    letter-spacing: -0.9939rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 9.9675rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83%;
+    letter-spacing: -0.3987rem;
+    text-transform: uppercase;
+  }
+}
+
+.certificates__list {
+  max-width: 117.2rem;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 13.6rem;
+  grid-area: stack;
+  margin-top: 9rem;
+
+  @include media.breakpoint(small-tablet) {
+    max-width: 66.8rem;
+    margin-top: 14rem;
+    grid-gap: 6.2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    max-width: 25.4rem;
+  }
+}
+
+.certificates__list-item {
+  display: flex;
+  flex-direction: column;
+
+  @include media.breakpoint(mobile) {
+    width: calc(50% - 3rem / 2);
+  }
+}
+
+.certificates__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.certificates__card-image-container {
+  position: relative;
+}
+
+.certificates__card-image-container-inner {
+  position: relative;
+  aspect-ratio: 300 / 380;
+  border-radius: 0 2.9599rem;
+  background: #141414;
+  box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  @include media.breakpoint(small-tablet) {
+    border-radius: 0 1.7858rem;
+    background: #141414;
+    box-shadow: 0 0 2.4133rem 0 rgba(0, 0, 0, 0.25);
+  }
+
+  @include media.breakpoint(mobile) {
+    border-radius: 0 1.105rem;
+    background: #141414;
+    box-shadow: 0 0 1.4933rem 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+.certificates__card-image-container-inner-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.certificates__card-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 175%;
+  height: auto;
+  z-index: 5;
+  object-fit: contain;
+  max-width: none;
+}
+
+.certificates__card-price {
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  font-family: var(--literature);
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+}
+
+.certificates__card-title {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.06rem;
+  color: #de5737;
+  margin-top: 1rem;
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.048rem;
+    margin-top: 0.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.036rem;
+    margin-top: 0;
+  }
+}
+
+.certificates__card-link {
+  margin-top: 3rem;
+  align-self: stretch;
+  padding: 1rem 2.4rem;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.06rem;
+  color: white;
+  border-radius: 100rem;
+  border: 0.2rem solid rgba(255, 255, 255, 0.15);
+  background: #de5737;
+  box-shadow: 0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+    0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+  text-align: center;
+  transition: box-shadow 0.2s;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0rem 1rem 3.52rem 0rem rgba(222, 87, 55, 0.3),
+        0rem 0.5rem 1.1233rem 0rem rgba(222, 87, 55, 0.09),
+        0rem 0.1932rem 0.425rem 0rem rgba(222, 87, 55, 0.04),
+        0rem 0.0637rem 0.1401rem 0rem rgba(222, 87, 55, 0.01);
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.06rem;
+    padding: 1rem 1.6rem;
+    border-radius: 100rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.15);
+    background: #de5737;
+    box-shadow: 0 0.1932rem 0.425rem 0 rgba(222, 87, 55, 0.04),
+      0 0.0637rem 0.1401rem 0 rgba(222, 87, 55, 0.01);
+    margin-top: 1.6rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.036rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 59.2662rem;
+    border: 0.1185rem solid rgba(255, 255, 255, 0.15);
+    background: #de5737;
+    box-shadow: 0 0.1145rem 0.2519rem 0 rgba(222, 87, 55, 0.04),
+      0 0.0377rem 0.083rem 0 rgba(222, 87, 55, 0.01);
+  }
+}
