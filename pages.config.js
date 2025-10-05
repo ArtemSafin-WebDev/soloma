@@ -8,6 +8,7 @@ import contacts from "./pages-data/contacts";
 import womensClub from "./pages-data/womens-club";
 import mensClub from "./pages-data/mens-club";
 import certificates from "./pages-data/certificates";
+import kitchen from "./pages-data/kitchen";
 
 const pagesConfig = {
   ...home,
@@ -20,6 +21,7 @@ const pagesConfig = {
   ...mensClub,
   ...womensClub,
   ...certificates,
+  ...kitchen,
 };
 
 export default pagesConfig;
