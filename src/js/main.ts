@@ -28,6 +28,8 @@ import detailGallery from "./detailGallery";
 import tabsNav from "./tabsNav";
 import tabs from "./tabs";
 import mission from "./mission";
+import certificatePrograms from "./certificatePrograms";
+import certificateIntro from "./certificateIntro";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -56,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
   tabsNav();
   tabs();
   mission();
+  certificatePrograms();
+  certificateIntro();
 });
 
 window.addEventListener("load", () => {

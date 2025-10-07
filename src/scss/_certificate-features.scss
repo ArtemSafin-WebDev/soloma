@@ -1,0 +1,131 @@
+@use "utils";
+@use "media";
+
+.certificate-features {
+  @include utils.blockWrapper;
+
+  margin-bottom: 14.5rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 8rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 4rem;
+  }
+}
+
+.certificate-features__content {
+  @include utils.blockContent;
+  position: relative;
+  z-index: 1;
+}
+
+.certificate-features__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 100vw;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+
+  @include media.breakpoint(small-tablet) {
+    transform: translateX(-50%);
+    bottom: 100%;
+    top: auto;
+    margin-bottom: -2.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.certificate-features__wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 150rem;
+  padding: 5rem 8rem;
+  border-radius: 0 5rem;
+  background: #141414;
+  color: white;
+
+  @include media.breakpoint(small-tablet) {
+    padding: 2.5rem 5rem;
+    margin: 0;
+    max-width: none;
+    border-radius: 0 5rem;
+    background: #141414;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding: 2rem 1.5rem;
+    border-radius: 0 5rem;
+    background: #141414;
+  }
+}
+
+.certificate-features__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+  row-gap: 3rem;
+
+  @include media.breakpoint(small-tablet) {
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 3rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    gap: 1rem;
+  }
+}
+
+.certificate-features__list-item {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.048rem;
+  position: relative;
+  padding-left: 1.6rem;
+  width: fit-content;
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.048rem;
+    width: auto;
+    padding-left: 1.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.036rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #de5737;
+
+    @include media.breakpoint(mobile) {
+      top: 0.55em;
+    }
+  }
+}
