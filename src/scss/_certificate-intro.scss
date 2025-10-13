@@ -61,7 +61,7 @@
   display: flex;
   gap: 3rem;
   @include media.breakpoint(small-tablet) {
-    width: auto;
+    width: 100%;
     gap: 0.5rem;
     flex-shrink: 1;
   }
@@ -70,6 +70,7 @@
     gap: 0.7rem;
     max-width: 26rem;
     margin: 0 auto;
+    width: 100%;
   }
 }
 
@@ -256,17 +257,25 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  aspect-ratio: 550 / 620;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    padding-bottom: 112.7%;
+    display: block;
+  }
 
   @include media.breakpoint(small-tablet) {
     background-image: url("../images/certificate-intro/bg-tablet.svg");
     border-radius: 0 3.0995rem;
     border: 0.3719rem solid #ba452a;
     background: #de5737;
-    aspect-ratio: 600 / 413;
+
+    &::before {
+      padding-bottom: 68.8%;
+    }
   }
 
   @include media.breakpoint(mobile) {
@@ -274,10 +283,14 @@
     border-radius: 0 1.6853rem;
     border: 0.2022rem solid #ba452a;
     background: #de5737;
-    aspect-ratio: 198 / 224;
+
+    &::before {
+      padding-bottom: 113%;
+    }
   }
   .swiper {
-    flex-grow: 1;
+    position: absolute;
+    inset: 0;
     margin: 0;
     overflow: visible;
   }
