@@ -174,8 +174,8 @@
     }
 
     @include media.breakpoint(mobile) {
-      width: 100%;
-      margin-right: 2.4rem;
+      width: 25.2rem;
+      margin-right: 2rem;
     }
 
     &::before {
@@ -185,7 +185,11 @@
       width: 100%;
 
       @include media.breakpoint(small-tablet) {
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 390 / 400;
+      }
+
+      @include media.breakpoint(mobile) {
+        aspect-ratio: 252 / 300;
       }
     }
   }
@@ -302,8 +306,11 @@
   z-index: 50;
 
   @include media.breakpoint(small-tablet) {
-    aspect-ratio: 1 / 1;
-    border-radius: 0;
+    aspect-ratio: 390 / 400;
+  }
+
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 252 / 300;
   }
 }
 
