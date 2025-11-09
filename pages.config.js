@@ -10,6 +10,7 @@ import mensClub from "./pages-data/mens-club";
 import certificates from "./pages-data/certificates";
 import kitchen from "./pages-data/kitchen";
 import certificate from "./pages-data/certificate";
+import events from "./pages-data/events";
 
 const pagesConfig = {
   ...home,
@@ -24,6 +25,7 @@ const pagesConfig = {
   ...certificates,
   ...kitchen,
   ...certificate,
+  ...events,
 };
 
 export default pagesConfig;

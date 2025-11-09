@@ -175,6 +175,7 @@
     text-transform: uppercase;
     -webkit-text-stroke-width: 0.036rem;
     -webkit-text-stroke-color: #fff;
+    width: min-content;
     &--tablet-small {
       font-size: 4.5022rem;
       font-style: normal;
@@ -184,7 +185,6 @@
       text-transform: uppercase;
     }
 
-    width: min-content;
     br {
       display: block;
     }
