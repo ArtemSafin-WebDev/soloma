@@ -105,10 +105,9 @@
   justify-content: space-between;
 
   @include media.breakpoint(mobile) {
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 0.5rem;
+    margin: 0;
   }
 }
 

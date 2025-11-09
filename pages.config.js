@@ -11,6 +11,7 @@ import certificates from "./pages-data/certificates";
 import kitchen from "./pages-data/kitchen";
 import certificate from "./pages-data/certificate";
 import events from "./pages-data/events";
+import event from "./pages-data/event";
 
 const pagesConfig = {
   ...home,
@@ -26,6 +27,7 @@ const pagesConfig = {
   ...kitchen,
   ...certificate,
   ...events,
+  ...event,
 };
 
 export default pagesConfig;
