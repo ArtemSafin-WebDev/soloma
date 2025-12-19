@@ -18,10 +18,12 @@ export default function forms() {
       if (!formValidator || !form) return;
       formValidator.validate();
 
-      console.log("Validated", formValidator.valid);
-
       if (formValidator.valid) {
         const formData = new FormData(form);
+        const type = form.querySelector<HTMLInputElement>('input[name="goal-type"]');
+        const name = form.querySelector<HTMLInputElement>('input[name="goal-name"]');
+        const goal = form.querySelector<HTMLInputElement>('input[name="goal"]');
+
         if (submitBtn) submitBtn.disabled = true;
         axios
           .post(form.action, formData, {
@@ -31,7 +33,16 @@ export default function forms() {
             },
           })
           .then((res) => {
-            console.log(res.data);
+
+            const goalName = (goal && goal.value ? goal.value : 'popup_form_success');
+            // @ts-ignore
+            ym(94532040,'reachGoal',goalName, {
+              // @ts-ignore
+              'type': type.value,
+              // @ts-ignore
+              'name': name.value
+            });
+
             const parentModal = form.closest<HTMLElement>(".js-modal");
             parentModal?.classList.remove("active");
             const modal = document.querySelector<HTMLElement>("#success-modal");
